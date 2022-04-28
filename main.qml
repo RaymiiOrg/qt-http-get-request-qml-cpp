@@ -17,7 +17,7 @@ Window {
         xmlhttp.onreadystatechange = function () {
             if (xmlhttp.readyState === XMLHttpRequest.DONE
                     && xmlhttp.status == 200) {
-                response = JSON.parse(xmlhttp.responseText)
+                response = xmlhttp.responseText
             }
         }
         xmlhttp.open("GET", url, true)
@@ -38,7 +38,7 @@ Window {
 
             TextField {
                 id: qmlResult
-                text: response.origin
+                text: response
             }
         }
 
